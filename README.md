@@ -33,3 +33,5 @@ ollama run gemma
 ollama run deepseek-r1
 ```
 
+See full list of available models [here](https://ollama.com/library).
+
