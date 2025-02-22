@@ -15,7 +15,7 @@ Start the `Ansible` docker container:
 make ansible
 ```
 
-> Note: From this point onwards, run all the following commands from within this container.
+> Note: From this point onwards, run all the following commands from within this container unless otherwise specified.
 
 Install `Ollama` LLM provider:
 
