@@ -1,0 +1,14 @@
+---
+
+- name: Uninstall and delete Ollama (https://github.com/ollama/ollama/blob/main/docs/linux.md)
+  shell: |
+    systemctl stop ollama
+    systemctl disable ollama
+    rm /etc/systemd/system/ollama.service
+    rm $(which ollama)
+    rm -r /usr/share/ollama
+    userdel ollama
+    groupdel ollama
+    rm -rf /usr/local/lib/ollama
+  ignore_errors: yes
+  become: true

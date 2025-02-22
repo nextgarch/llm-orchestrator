@@ -16,3 +16,20 @@ make ansible
 ```
 
 > Note: From this point onwards, run all the following commands from within this container.
+
+Install `Ollama` LLM provider:
+
+```sh
+make install-ollama-provider
+```
+
+In a separate (non-Ansible) terminal, try running `ollama`. 
+If it shows help, installation was successful.
+Now in this same (non-Ansible) terminal, run the following commands to install LLMs:
+
+```sh
+ollama run llama3.2
+ollama run gemma
+ollama run deepseek-r1
+```
+

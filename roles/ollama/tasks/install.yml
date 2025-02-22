@@ -1,0 +1,12 @@
+---
+
+- name: Download Ollama installation script
+  get_url:
+    url: https://ollama.com/install.sh
+    dest: /tmp/install_ollama.sh
+    mode: '0755'
+  become: yes
+
+- name: Run Ollama installation script
+  command: /tmp/install_ollama.sh
+  become: yes

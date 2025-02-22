@@ -1,0 +1,9 @@
+---
+
+- name: Install Ollama provider
+  import_tasks: roles/ollama/tasks/install.yml
+  tags: install-ollama
+
+- name: Uninstall Ollama provider
+  import_tasks: roles/ollama/tasks/uninstall.yml
+  tags: uninstall-ollama
