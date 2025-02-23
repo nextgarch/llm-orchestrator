@@ -18,8 +18,8 @@ ngax_host:
     destination: "autossh.sh"
 
   teardown_script:
-    local_path: "roles/networking/templates/teardown.sh"
-    destination: "teardown.sh"
+    local_path: "roles/networking/templates/teardown_autossh.sh.j2"
+    destination: "teardown_autossh.sh"
 
 providers:
   ollama:

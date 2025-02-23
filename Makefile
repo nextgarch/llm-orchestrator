@@ -24,8 +24,14 @@ start-anythingllm-server:
 stop-anythingllm-server:
 	ansible-playbook $(SERVER_PLAYBOOK) -t stop-anythingllm
 
-setup-port-forwarding:
+setup-port-forwarding-scripts:
 	ansible-playbook $(NETWORKING_PLAYBOOK) -t setup-port-forwarding
 
+setup-port-forwarding:
+	/tmp/./autossh.sh
+
+# teardown-port-forwarding:
+# 	ansible-playbook $(NETWORKING_PLAYBOOK) -t teardown-port-forwarding
+
 teardown-port-forwarding:
-	ansible-playbook $(NETWORKING_PLAYBOOK) -t teardown-port-forwarding
+	/tmp/./teardown_autossh.sh
