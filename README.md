@@ -101,7 +101,27 @@ make setup-port-forwarding
 ```
 
 With this, port-forwarding setup should be complete.
-To test, open a browser and access `<host-ip>:11434` and you should see `Ollama is running`.
+You can test if ports have been forwarded by running the following commands in a host machine terminal:
+
+```sh
+ss -tulnp | grep 11434
+
+# Expected output:
+# tcp   LISTEN 0      128                 0.0.0.0:11434      0.0.0.0:*    users:(("sshd",pid=3524359,fd=9))
+# tcp   LISTEN 0      128                    [::]:11434         [::]:*    users:(("sshd",pid=3524359,fd=10)) 
+```
+
+or 
+
+```sh
+ss -tulnp | grep 3001
+
+# Expected output:
+# tcp   LISTEN 0      128                 0.0.0.0:3001       0.0.0.0:*    users:(("sshd",pid=3524359,fd=11)) 
+# tcp   LISTEN 0      128                    [::]:3001          [::]:*    users:(("sshd",pid=3524359,fd=12))
+```
+
+You can also open a browser and access `<host-ip>:11434` and you should see `Ollama is running`.
 
 ### Create SSH Key for Host Machine
 
