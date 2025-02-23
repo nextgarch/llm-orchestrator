@@ -52,7 +52,7 @@ It pulls the ready-to-use docker container provided by `MintPlex Labs` and gets 
 
 ## Stopping the Services
 
-To uninstall `Ollama` (with all its models) and stop `AnythingLLM` docker, do the following:
+To uninstall `Ollama` (with all its models) and stop `AnythingLLM` container, do the following:
 
 ```sh
 make uninstall-ollama-provider
