@@ -90,6 +90,7 @@ This should allow the host to expose its ports to other machines.
 
 ### Create an SSH Key for Host Machine
 
+We will create a key to allow password-less ssh into the host machine.
 Get back into the VM (non-Ansible terminal) and run the following:
 
 ```sh
