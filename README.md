@@ -137,6 +137,14 @@ ss -tulnp | grep 3001
 
 You can also open a browser and access `<host-ip>:11434` and you should see `Ollama is running`.
 
+To access the web UI version (`AnythingLLM`), go to `<host-ip>:3001`. 
+Here, you can choose the LLM and send prompts just like you would do with OpenAI's ChatGPT.
+
+## Running the Python API
+
+At this point, we have a running instance of the LLM on our server.
+In order to access and use its Python API, please read [the given example](examples/README.md).
+
 ## Stopping the Services
 
 To uninstall `Ollama` (with all its models) and stop `AnythingLLM` server container, do the following:
