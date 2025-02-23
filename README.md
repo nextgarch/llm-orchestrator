@@ -1,6 +1,6 @@
 # Large-Language Model (LLM) Orchestrator
 
-## Setup
+## Basic Setup
 
 Instal `Docker` by running the following commands:
 
@@ -18,6 +18,8 @@ make ansible
 ```
 
 > Note: From this point onwards, run all the following commands from within this container unless otherwise specified.
+
+## LLM Provider
 
 Install `Ollama` LLM provider:
 
@@ -37,3 +39,22 @@ ollama run deepseek-r1
 
 See full list of available models [here](https://ollama.com/library).
 
+## LLM Server
+
+Install `AnythingLLM` as following:
+
+```sh
+make start-anythingllm-server
+```
+
+`AnythingLLM` server is setup as a `docker` container, so no installation is needed. 
+It pulls the ready-to-use docker container provided by `MintPlex Labs` and gets the server running.
+
+## Stopping the Services
+
+To uninstall `Ollama` (with all its models) and stop `AnythingLLM` docker, do the following:
+
+```sh
+make uninstall-ollama-provider
+make stop-anythingllm-server
+```
