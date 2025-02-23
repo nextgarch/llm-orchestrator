@@ -28,6 +28,7 @@ providers:
       destination: "install_ollama.sh"
 
 servers:
+  # https://docs.anythingllm.com/installation-docker/local-docker
   anythingllm:
     start_script: 
       local_path: "roles/anythingllm/scripts/start_anythingllm.sh"
