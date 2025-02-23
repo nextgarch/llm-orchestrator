@@ -16,3 +16,9 @@ install-ollama-provider:
 
 uninstall-ollama-provider:
 	ansible-playbook $(PROVIDER_PLAYBOOK) -t uninstall-ollama
+
+start-anythingllm-server:
+	ansible-playbook $(SERVER_PLAYBOOK) -t start-anythingllm
+
+stop-anythingllm-server:
+	ansible-playbook $(SERVER_PLAYBOOK) -t stop-anythingllm

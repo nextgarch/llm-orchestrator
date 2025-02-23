@@ -1,0 +1,15 @@
+---
+
+- name: Copy stop script to destination server
+  template: 
+    src: "{{ servers.anythingllm.stop_script_path }}"
+    dest: "{{ servers.anythingllm.dest_stop_script_path }}"
+    mode: "0755"
+    force: yes
+  become: true
+
+- name: Run AnythingLLM stop script
+  command: "{{ servers.anythingllm.dest_stop_script_path }}"
+  ignore_errors: yes
+  become: yes
+

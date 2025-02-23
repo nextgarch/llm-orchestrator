@@ -1,0 +1,9 @@
+---
+
+- name: Start AnythingLLM server (docker)
+  import_tasks: roles/anythingllm/tasks/start.yml
+  tags: start-anythingllm
+
+- name: Stop AnythingLLM server (docker)
+  import_tasks: roles/anythingllm/tasks/stop.yml
+  tags: stop-anythingllm

@@ -9,6 +9,8 @@ sudo chmod a+x scripts/install-docker.sh
 ./scripts/install-docker.sh
 ```
 
+Reboot your VM.
+
 Start the `Ansible` docker container:
 
 ```sh
@@ -20,7 +22,7 @@ make ansible
 Install `Ollama` LLM provider:
 
 ```sh
-make install-ollama-provider
+make setup-ollama-provider
 ```
 
 In a separate (non-Ansible) terminal, try running `ollama`. 

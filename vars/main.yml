@@ -12,4 +12,7 @@ providers:
 
 servers:
   anythingllm:
-    local_script_path: "{{ ansible_env.PWD }}/roles/anythingllm/scripts/install_anythingllm.sh"
+    start_script_path: "roles/anythingllm/scripts/start_anythingllm.sh"
+    stop_script_path: "roles/anythingllm/scripts/stop_anythingllm.sh"
+    dest_start_script_path: "/tmp/start_anythingllm.sh"
+    dest_stop_script_path: "/tmp/stop_anythingllm.sh"

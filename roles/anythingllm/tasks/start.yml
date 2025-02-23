@@ -1,0 +1,13 @@
+---
+
+- name: Copy start script to destination server
+  template: 
+    src: "{{ servers.anythingllm.start_script_path }}"
+    dest: "{{ servers.anythingllm.dest_start_script_path }}"
+    mode: "0755"
+    force: yes
+  become: true
+
+- name: Run AnythingLLM start script
+  command: "{{ servers.anythingllm.dest_start_script_path }}"
+  become: yes
