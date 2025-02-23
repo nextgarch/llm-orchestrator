@@ -57,5 +57,5 @@ Purdue University's Computer Science Department boasts a rich history, dating ba
 
 ## AnythingLLM (Server) API
 
-Please look at the example shared in [examples/anythingllm-api.py](examples/anythingllm-api.py).
+Please look at the example shared in [anythingllm-api.py](anythingllm-api.py).
 For more information, read the API docs provided by `AnythingLLM` available at [this link](https://docs.useanything.com/features/api) and at your local instance at `http://<host-ip>:3001/api/docs/`.
