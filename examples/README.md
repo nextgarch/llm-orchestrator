@@ -1,7 +1,10 @@
 # Remote API Example
 
+> Note: From now onwards, all commands must be run from a non-Ansible terminal.
+
 Now that we have an LLM provider and server instance running, we can issue prompts from `python` and get responses.
 We will be using `aisuite` with `python3.10` for this purpose.
+For more details, please visit [aisuite](https://github.com/andrewyng/aisuite/tree/main).
 
 ```sh
 pip install aisuite
@@ -10,7 +13,7 @@ pip install aisuite
 To run the provided example, simply use the following command:
 
 ```sh
-python aisuite-api.py
+python examples/aisuite-api.py
 ```
 
 Expected response would be something like this:
