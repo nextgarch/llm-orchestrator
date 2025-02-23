@@ -3,6 +3,9 @@
 > Note: From now onwards, all commands must be run from a non-Ansible terminal.
 
 Now that we have an LLM provider and server instance running, we can issue prompts from `python` and get responses.
+
+## AI-Suite (Provider) API
+
 We will be using `aisuite` with `python3.10` for this purpose.
 For more details, please visit [aisuite](https://github.com/andrewyng/aisuite/tree/main).
 
@@ -51,3 +54,8 @@ Purdue University's Computer Science Department boasts a rich history, dating ba
 * The department boasts numerous awards and recognitions, including the prestigious **ACM Grace Hopper Award**.
 * Notable alumni include pioneers in fields like computer vision, robotics, and human-computer interaction.
 ```
+
+## AnythingLLM (Server) API
+
+Please look at the example shared in [examples/anythingllm-api.py](examples/anythingllm-api.py).
+For more information, read the API docs provided by `AnythingLLM` available at [this link](https://docs.useanything.com/features/api) and at your local instance at `http://<host-ip>:3001/api/docs/`.
