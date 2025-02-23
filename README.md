@@ -58,3 +58,5 @@ To uninstall `Ollama` (with all its models) and stop `AnythingLLM` container, do
 make stop-anythingllm-server
 make uninstall-ollama-provider
 ```
+
+Finally, exit the `Ansible` docker container itself (`Ctrl+d`).
