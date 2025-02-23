@@ -2,11 +2,11 @@
 
 - name: Download Ollama installation script
   get_url:
-    url: "{{ providers.ollama.installer_script_url }}"
-    dest: "/tmp/{{ providers.ollama.local_script_name }}"
+    url: "{{ providers.ollama.installer.url }}"
+    dest: "/tmp/{{ providers.ollama.installer.destination }}"
     mode: '0755'
   become: yes
 
 - name: Run Ollama installation script
-  command: "/tmp/{{ providers.ollama.local_script_name }}"
+  command: "/tmp/{{ providers.ollama.installer.destination }}"
   become: yes

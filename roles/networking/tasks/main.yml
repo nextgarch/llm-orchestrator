@@ -1,0 +1,9 @@
+---
+
+- name: Setup reverse port forwarding to the host machine
+  import_tasks: roles/networking/tasks/setup.yml
+  tags: setup-port-forwarding
+
+- name: Teardown reverse port forwarding to the host machine
+  import_tasks: roles/networking/tasks/teardown.yml
+  tags: teardown-port-forwarding

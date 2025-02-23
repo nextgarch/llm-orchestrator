@@ -1,0 +1,25 @@
+---
+
+- name: Ensure autossh is installed
+  package:
+    name: autossh
+    state: present
+  become: true
+
+- name: Copy the ssh configuration file to the remote server
+  template: 
+    src: "{{ ngax_host.ssh_config.local_path }}"
+    dest: "/tmp/{{ ngax_host.ssh_config.destination }}"
+    mode: "0755"
+  become: true
+
+- name: Copy the autossh shell script to the remote server
+  template: 
+    src: "{{ ngax_host.autossh_script.local_path }}"
+    dest: "/tmp/{{ ngax_host.autossh_script.destination }}"
+    mode: "0755"
+  become: true
+
+- name: Launch the autossh script to start reverse port forwarding
+  command: "/tmp/{{ ngax_host.autossh_script.destination }}"
+  become: true

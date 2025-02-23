@@ -1,0 +1,13 @@
+---
+
+- name: Copy the teardown script to the remote server
+  copy: 
+    src: "{{ ngax_host.teardown_script.local_path }}"
+    dest: "/tmp/{{ ngax_host.teardown_script.destination }}"
+    mode: "0755"
+  become: true
+
+- name: Launch the teardown script to stop port forwarding connections
+  command: "/tmp/{{ ngax_host.teardown_script.destination }}"
+  ignore_errors: yes
+  become: true

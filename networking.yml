@@ -1,6 +1,6 @@
 ---
 
-- name: Provision the LLM provider for our local setup
+- name: Provision the ports from server VM to host machine
   hosts: SERVER
   gather_facts: true
 
@@ -8,4 +8,4 @@
     - vars/main.yml
   
   roles:
-    - ollama
+    - networking

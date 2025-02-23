@@ -5,14 +5,34 @@ project:
   version: "1.0.0"
   description: "An Ansible-based LLM Orchestrator for Your Local Cluster"
 
+ngax_host:
+  username: "root"
+  ip_address: "10.168.0.177"
+
+  ssh_config: 
+    local_path: "roles/networking/templates/ssh_config.j2"
+    destination: "ssh_config"
+  
+  autossh_script:
+    local_path: "roles/networking/templates/autossh.sh.j2"
+    destination: "autossh.sh"
+
+  teardown_script:
+    local_path: "roles/networking/templates/teardown.sh"
+    destination: "teardown.sh"
+
 providers:
   ollama:
-    installer_script_url: "https://ollama.com/install.sh"
-    local_script_name: "install_ollama.sh"
+    installer: 
+      url: "https://ollama.com/install.sh"
+      destination: "install_ollama.sh"
 
 servers:
   anythingllm:
-    start_script_path: "roles/anythingllm/scripts/start_anythingllm.sh"
-    stop_script_path: "roles/anythingllm/scripts/stop_anythingllm.sh"
-    dest_start_script_path: "/tmp/start_anythingllm.sh"
-    dest_stop_script_path: "/tmp/stop_anythingllm.sh"
+    start_script: 
+      local_path: "roles/anythingllm/scripts/start_anythingllm.sh"
+      destination: "start_anythingllm.sh"
+
+    stop_script: 
+      local_path: "roles/anythingllm/scripts/stop_anythingllm.sh"
+      destination: "stop_anythingllm.sh"

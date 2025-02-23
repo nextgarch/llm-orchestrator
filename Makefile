@@ -4,6 +4,7 @@ export ANSIBLE_INVENTORY ?= $(PROJECT_ROOT)/inventory.ini
 
 export PROVIDER_PLAYBOOK ?= $(PROJECT_ROOT)/provider.yml
 export SERVER_PLAYBOOK ?= $(PROJECT_ROOT)/server.yml
+export NETWORKING_PLAYBOOK ?= $(PROJECT_ROOT)/networking.yml
 
 ansible:
 	sh ./scripts/ansible
@@ -22,3 +23,9 @@ start-anythingllm-server:
 
 stop-anythingllm-server:
 	ansible-playbook $(SERVER_PLAYBOOK) -t stop-anythingllm
+
+setup-port-forwarding:
+	ansible-playbook $(NETWORKING_PLAYBOOK) -t setup-port-forwarding
+
+teardown-port-forwarding:
+	ansible-playbook $(NETWORKING_PLAYBOOK) -t teardown-port-forwarding
