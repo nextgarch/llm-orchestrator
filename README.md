@@ -88,6 +88,19 @@ service sshd restart
 
 This should allow the host to expose its ports to other machines.
 
+### Create an SSH Key for Host Machine
+
+Get back into the VM (non-Ansible terminal) and run the following:
+
+```sh
+ssh-keygen 
+# when prompted, use the following key name: lmserver_key_for_host
+```
+
+> Note: Create a key with the exact name `lmserver_key_for_host` because this is expected in the ssh_config file we use for the host machine.
+
+## Enable Port-Forwarding from VM to Host 
+
 Next, go back to the Ansible terminal running inside the VM and run the following command:
 
 ```sh
@@ -122,17 +135,6 @@ ss -tulnp | grep 3001
 ```
 
 You can also open a browser and access `<host-ip>:11434` and you should see `Ollama is running`.
-
-### Create SSH Key for Host Machine
-
-Run the following:
-
-```sh
-ssh-keygen 
-# when prompted, use the following key name: lmserver_key_for_host
-```
-
-> Note: Create a key with the exact name `lmserver_key_for_host` because this is expected in the ssh_config file we use for the host machine.
 
 ## Stopping the Services
 
