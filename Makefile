@@ -25,7 +25,7 @@ stop-anythingllm-server:
 	ansible-playbook $(SERVER_PLAYBOOK) -t stop-anythingllm
 
 setup-port-forwarding:
-	ansible-playbook $(NETWORKING_PLAYBOOK) -t setup-port-forwarding
+	ansible-playbook $(NETWORKING_PLAYBOOK) -t setup-port-forwarding -vvv
 
 teardown-port-forwarding:
 	ansible-playbook $(NETWORKING_PLAYBOOK) -t teardown-port-forwarding

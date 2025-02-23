@@ -1,4 +1,10 @@
+export PUBLIC_PORT=${PUBLIC_PORT:-8080}
+export LOCAL_PORT=${LOCAL_PORT:-8080}
+
 autossh -f -F "/tmp/{{ ngax_host.ssh_config.destination }}" -N -T \
     -R 11434:localhost:11434 \
     -R 3001:localhost:3001 \
     ngax-host
+
+ssh -f -F "/tmp/{{ ngax_host.ssh_config.destination }}" -N -T -R \
+    $PUBLIC_PORT:localhost:$LOCAL_PORT ngax-host

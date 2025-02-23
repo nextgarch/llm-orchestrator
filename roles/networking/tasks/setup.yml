@@ -6,19 +6,15 @@
     state: present
   become: true
 
-- name: Copy the ssh configuration file to the remote server
+- name: Copy ssh configuration and autossh files to the remote server
   template: 
-    src: "{{ ngax_host.ssh_config.local_path }}"
-    dest: "/tmp/{{ ngax_host.ssh_config.destination }}"
+    src: "{{ item.src }}"
+    dest: "/tmp/{{ item.dest }}"
     mode: "0755"
   become: true
-
-- name: Copy the autossh shell script to the remote server
-  template: 
-    src: "{{ ngax_host.autossh_script.local_path }}"
-    dest: "/tmp/{{ ngax_host.autossh_script.destination }}"
-    mode: "0755"
-  become: true
+  with_items:
+    - { src: "{{ ngax_host.ssh_config.local_path }}", dest: "{{ ngax_host.ssh_config.destination }}" }
+    - { src: "{{ ngax_host.autossh_script.local_path }}", dest: "{{ ngax_host.autossh_script.destination }}" }
 
 - name: Launch the autossh script to start reverse port forwarding
   command: "/tmp/{{ ngax_host.autossh_script.destination }}"
