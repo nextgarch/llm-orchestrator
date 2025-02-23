@@ -1,0 +1,6 @@
+---
+
+- name: Run Ollama installation script
+  command: "{{ servers.anythingllm.local_script_path }}"
+  become: yes
+

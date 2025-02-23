@@ -1,0 +1,15 @@
+---
+
+project:
+  name: "LLM Orchestrator"
+  version: "1.0.0"
+  description: "An Ansible-based LLM Orchestrator for Your Local Cluster"
+
+providers:
+  ollama:
+    installer_script_url: "https://ollama.com/install.sh"
+    local_script_name: "install_ollama.sh"
+
+servers:
+  anythingllm:
+    local_script_path: "{{ ansible_env.PWD }}/roles/anythingllm/scripts/install_anythingllm.sh"
